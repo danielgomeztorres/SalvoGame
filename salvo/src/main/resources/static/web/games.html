@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SALVO!</title>
+	<link rel="stylesheet" href="games1.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+	<div id="app">
+
+		<video autoplay="autoplay" loop="loop" id="video_background" preload="auto" muted  />
+		<source src="media/EarthSun.mp4" type="video/mp4" />
+		</video />
+		<svg v-on:click="audioPause" class="genericons-neue genericons-neue-pause" width="16px" height="16px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="genericons-neue.svg#pause"></use></svg>
+		<button class="buttonAudio" v-on:click="audioPause"><i class="material-icons">pause_circle_filled</i></button>
+		<button class="buttonAudio" v-on:click="audioPlay"><i class="material-icons">play_circle_filled</i></button>	
+	     <audio onload>
+			<source src="media/bensound-newdawn.mp3">
+			</audio>
+		<div class="formLogin">
+		<h1 class="title">SPACE BATTLE</h1>
+		<form class="form" onsubmit="return false" v-if="playerGame == null">
+			<label>Name: <input id="username" type="email" v-model="username"></label>
+			<label>Password: <input id="password" type="password" v-model="password"></label>
+			<button v-on:click="login">LOGIN</button>
+			<button v-on:click="signup">SIGN UP</button>
+		</form>
+
+		<form onsubmit="return false" v-else>
+			<button v-on:click="createGame">NEW GAME</button>
+			<button v-on:click="logout">LOGOUT</button>
+		</form>
+	</div>
+
+		<div class="listAndTable">
+			<ul  class="ol">
+				<li class="leaderTable" v-for="dato in dateGame">
+					{{dato.date}} : <span v-for="info in dato.gamePlayers">
+				, {{info.player.email}}</span><button v-on:click="enterTheGame(dato)"
+					 v-if="returnGame(dato)">GO!!</button>
+					 <button  onsubmit="return false"  v-on:click="joinGame(dato)" v-if="buttonJoin(dato)">JOIN</button>
+				</li>
+			</ul>
+			<table class="leaderTable">
+				<tr>
+			
+					<th class="tableTh">NAME</th>
+					<th class="tableTh">TOTAL</th>
+					<th class="tableTh">WON</th>
+					<th class="tableTh">LOST</th>
+					<th class="tableTh">TIED</th>
+				</tr>
+				<tr v-for="(info, index) in obj">
+					
+					<td class="tableTd">{{index + 1}} : {{info.email}}</td>
+					<td class="tableTd">{{info.totalPoints}}</td>
+					<td class="tableTd">{{info.won}}</td>
+					<td class="tableTd">{{info.lost}}</td>
+					<td class="tableTd">{{info.tied}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="games.js"></script>
+
+</html>

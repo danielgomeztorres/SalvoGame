@@ -1,0 +1,334 @@
+/***************************************************************/
+/**********************************GAME*************************/
+/* ************************************************************* */
+#video_background { 
+	position: absolute; 
+	bottom: 0px; 
+	right: 0px; 
+	min-width: 100%; 
+	min-height: 100%; 
+	width: auto; 
+	height: auto; 
+	z-index: -1000; 
+    overflow: hidden; 
+    background-attachment: fixed;
+}
+#video_pattern { 
+	background:#fff; 
+	position: fixed; 
+	opacity: 0.8; 
+	left: 0px; 
+	top: 0px; 
+	width: 100%; 
+	height: 100%; 
+	z-index: 1; 
+}
+#video_backgroundGame { 
+	position: absolute; 
+	bottom: 0px; 
+	right: 0px; 
+	min-width: 100%; 
+	min-height: 100%; 
+	width: auto; 
+	height: auto; 
+	z-index: -1000; 
+    overflow: hidden; 
+    background-attachment: fixed;
+}
+#video_patternGame { 
+	background:#fff; 
+	position: fixed; 
+	opacity: 0.8; 
+	left: 0px; 
+	top: 0px; 
+	width: 100%; 
+	height: 100%; 
+	z-index: 1; 
+}
+.buttonAudio {
+    background-color:#f6f9f900;
+    border: none;
+    color: white;
+}
+svg{
+    color: black;
+}
+
+label{
+    color: #00d6db;
+}
+.formLogin{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.youVsOponnent{
+    color: black;
+text-shadow: #111011d1;
+   text-align: center;
+   position: relative;
+   top: 90px;
+
+}
+.twoTables{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.containerA{  
+    position: relative;
+    width: 415px;
+    -webkit-perspective: 100px; /* Safari 4-8  */
+    perspective: 800px;
+    perspective-origin: right;
+}
+
+.containerB{  
+    position: relative;
+    width: 415px;
+    -webkit-perspective: 100px; /* Safari 4-8  */
+    perspective: 800px;
+    perspective-origin: left;
+}
+.container2{
+    padding: 0px;
+    -webkit-transform-style: preserve-3d; /* Safari 3-8  */  
+    -webkit-transform: rotateX(45deg); /* Safari 3-8  */
+    transform-style: preserve-3d;
+    transform: rotateX(45deg);
+    
+}
+
+
+.boxBottom{
+    margin-left: 8px;
+    width: 570px;
+    height: 50px;
+    background-color: black;
+
+}
+/* .box{
+    display: inline-grid;
+    background-color:#8012c4ab;
+  border: 1px solid #e902f8;
+  padding: 15px;
+  font-size: 12px;
+  text-align: center;
+  z-index:-50;
+} */
+.boxShips{
+    background-color:black;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  
+}
+
+.boxSalvo{
+    background-color:yellow;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+.boxSalvoYo{
+    background-color:red;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+.tableDosD{
+    
+    position: absolute;
+    bottom: 0px;
+    top: 97px;
+    left: 0px;
+    right: 392px;
+}
+.tableDosSize{
+    width: 300px;
+    height: 300px;
+}
+
+
+/***************************************************************/
+/********************************TABLEANDLIST*************************/
+/***************************************************************/
+
+.leaderTable{
+      color: #00d6db;
+      background: #111011d1;;
+      border: 4px solid rgba(0, 0, 0, 0.8);
+}
+.listAndTable{
+ 
+    width: 70%;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/***************************************************************/
+/********************************DRAG AND DROP*************************/
+/***************************************************************/
+
+
+
+
+.div1Ver {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 24px;
+    height: 24px;
+    z-index: 50;
+   }
+   
+    
+   .div2Ver {
+  display: flex;
+  flex-direction: row;
+    background-color:green;
+    width: 24px;
+    height: 28px;
+    z-index: 50;
+    
+   }
+   .divDrag {
+   
+    background-color:rgba(0, 128, 0, 0);
+    width: 24px;
+    height: 24px;
+    z-index: 50;
+    
+   }
+   .div1Hor {
+    color: white;
+     display: flex;
+     flex-direction: row;
+     background-color: black;
+     width: 24px;
+     height: 24px;
+     z-index: 50;
+    }
+    
+     
+    .div2Hor {
+      
+   display: flex;
+   flex-direction: row;
+     background-color:green;
+     width: 28px;
+     height: 24px;
+     z-index: 50;
+     
+    }
+   .divDrag2 {
+   display: flex;
+   flex-direction: row;
+     background-color:rgba(0, 128, 0, 0);
+     width: 137px;
+     height: 24px;
+     z-index: 50;
+     
+    }
+   .div2 {
+     background-color:rgba(0, 128, 0, 0);
+     width: 24px;
+     height: 24px;
+     z-index: 50;
+     
+   }
+   .containerA{  
+    position: relative;
+    width: 415px;
+    -webkit-perspective: 100px; 
+    perspective: 800px;
+    perspective-origin: right;
+}
+
+tr{
+    border-spacing: 0px;
+}
+table{
+    border-spacing: 0px;
+}
+.box{
+    display: inline-grid;
+    background-color: #8012c4ab; 
+    border: 1px solid #0c0b0c;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    z-index: -50;
+}
+.div1Ver {
+    color: white;
+   display: flex;
+   flex-direction: column;
+   background-color: black;
+   width: 24px;
+   height: 24px;
+   z-index: 50;
+  }
+  
+   
+  .div2Ver {
+ display: flex;
+ flex-direction: row;
+   background-color:green;
+   width: 24px;
+   height: 28px;
+   z-index: 50;
+   
+  }
+  .divDrag {
+  
+   background-color:rgba(0, 128, 0, 0);
+   width: 24px;
+   height: 24px;
+   z-index: 50;
+   
+  }
+  
+  
+  .div2 {
+    background-color:rgba(0, 128, 0, 0);
+    width: 24px;
+    height: 24px;
+    z-index: 50;
+    
+  }
+  .containerB{  
+    position: relative;
+    width: 415px;
+    -webkit-perspective: 100px; /* Safari 4-8  */
+    perspective: 800px;
+    perspective-origin: left;
+}
+.container2{
+    padding: 0px;
+    -webkit-transform-style: preserve-3d; /* Safari 3-8  */  
+    -webkit-transform: rotateX(45deg); /* Safari 3-8  */
+    transform-style: preserve-3d;
+    transform: rotateX(45deg);
+    
+}
+.repositorySpaceShips {
+    background-color: violet;
+    width: 200px;
+}
+ 
+
+
+
+
+
+

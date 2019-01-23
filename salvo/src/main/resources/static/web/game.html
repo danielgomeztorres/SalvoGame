@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ships Locations</title>
+	<link rel="stylesheet" href="games1.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+	<div id="app">
+
+		<header>
+			<video autoplay="autoplay" loop="loop" id="video_backgroundGame" preload="auto" />
+			<source src="media/Free_Background_Motion_Loop(youtube.com).mp4" type="video/mp4" />
+			</video />
+
+			<h1 class="header">SALVO GAME
+				<audio autoplay onload>
+					<source src="media/bensound-epic.mp3">
+				</audio>
+				<button class="buttonAudio" v-on:click="audioPause"><i class="material-icons">pause_circle_filled</i></button>
+				<button class="buttonAudio" v-on:click="audioPlay"><i class="material-icons">play_circle_filled</i></button>
+			</h1>
+			<form id="logout" onsubmit="return false">
+				<button v-show="logouts" v-on:click="logout">LOGOUT</button>
+				<button v-on:click="backMenu">BACK</button>
+			
+			</form>
+		</header>
+
+		<section ondrop="drop(event)" ondragover="allowDrop(event)" class="repositorySpaceShips">
+			<div class="divDrag" id="drag1" draggable="true" ondragstart="drag(event)">
+				<div class="div1Ver">X1</div>
+			</div>
+			<br>
+			<div class="divDrag" id="drag2" draggable="true" ondragstart="drag(event)">
+				<div class="div1Ver">X2</div>
+				<div class="div2Ver"></div>
+			</div>
+			<br>
+			<br>
+			<div class="divDrag2" id="drag3" draggable="true" ondragstart="drag(event)">
+				<div class="div1Hor">X5</div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
+			</div>
+			<br>
+		</section>
+
+		<button v-on:click="putShips">OO</button>
+		<div class="twoTables">
+			<div>
+				<table class="containerA">
+					<tbody class="container2">
+						<tr>
+							<th class="box" v-for="number in numbers">{{number}}</th>
+						</tr>
+						<tr v-for="letter in letters">
+							<td class="box">{{letter}}</td>
+							<td ondrop="dropVer(event)" ondragover="allowDrop(event)" class="box" v-for="i in 10" v-bind:id="letter + i"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div>
+				<table class="containerB">
+					<tbody class="container2">
+						<tr>
+							<th class="box" v-for="number in numbers">{{number}}</th>
+						</tr>
+						<tr v-for="letter in letters">
+							<td class="box">{{letter}}</td>
+							<td class="box" v-for="i in 10" v-bind:id="2 + letter + i"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+		<h3 class="youVsOponnent">-{{local.email}}- VS -{{oponnent.email}}-</h3>
+	</div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="game.js"></script>
+
+</html>

@@ -1,0 +1,119 @@
+/***************************************************************/
+/**********************************GAME*************************/
+/***************************************************************/
+body{
+background-image: url(media/water.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+}
+.header{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.twoTables{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.container{  
+    position: relative;
+    height: 490px;
+    width: 415px;
+    margin-left: 60px;
+    margin-top: 10px;
+    -webkit-perspective: 100px; /* Safari 4-8  */
+    perspective-origin: right;
+    perspective: 800px;
+}
+.container2{ position: relative;
+    height: 490px;
+    width: 415px;
+    margin-left: 60px;
+    margin-top: 10px;
+    -webkit-perspective: 100px; /* Safari 4-8  */
+    perspective-origin: left;
+    perspective: 800px;}
+.containerTransform{
+    padding: 0px;
+    position: absolute;
+    border: 1px solid black;
+
+    background-color: red;
+    background:black; 
+    -webkit-transform-style: preserve-3d; /* Safari 3-8  */  
+    -webkit-transform: rotateX(45deg); /* Safari 3-8  */
+    transform-style: preserve-3d;
+    transform: rotateX(45deg);
+    
+}
+
+.box{
+    background-color:rgb(101, 101, 219);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+}
+
+.box{
+    background-color:rgb(101, 101, 219);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  font-size: 12px;
+  text-align: center;
+}
+.boxShips{
+    background-color:red;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+  
+}
+
+.boxSalvo{
+    background-color:yellow;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+.boxSalvoYo{
+    background-color:green;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+
+
+/***************************************************************/
+/********************************TABLEANDLIST*************************/
+/***************************************************************/
+
+.leaderTable{
+      background:  violet;
+      border: 4px solid rgba(0, 0, 0, 0.8);
+}
+.listAndTable{
+    width: 70%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+
+
+
+
+
+
+
+
+
