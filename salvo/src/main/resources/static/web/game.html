@@ -7,6 +7,8 @@
 	<title>Ships Locations</title>
 	<link rel="stylesheet" href="games1.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ'
+	 crossorigin='anonymous'>
 </head>
 
 <body>
@@ -28,65 +30,82 @@
 			<form id="logout" onsubmit="return false">
 				<button v-show="logouts" v-on:click="logout">LOGOUT</button>
 				<button v-on:click="backMenu">BACK</button>
-			
+
 			</form>
 		</header>
 
-		<section ondrop="drop(event)" ondragover="allowDrop(event)" class="repositorySpaceShips">
-			<div class="divDrag" id="drag1" draggable="true" ondragstart="drag(event)">
-				<div class="div1Ver">X1</div>
-			</div>
-			<br>
-			<div class="divDrag" id="drag2" draggable="true" ondragstart="drag(event)">
-				<div class="div1Ver">X2</div>
-				<div class="div2Ver"></div>
-			</div>
-			<br>
-			<br>
-			<div class="divDrag2" id="drag3" draggable="true" ondragstart="drag(event)">
-				<div class="div1Hor">X5</div>
-				<div class="div2Hor"></div>
-				<div class="div2Hor"></div>
-				<div class="div2Hor"></div>
-				<div class="div2Hor"></div>
-			</div>
-			<br>
-		</section>
+		<div @drop="drop" @dragover="allowDrop" class="repositorySpaceShips">
 
-		<button v-on:click="putShips">OO</button>
-		<div class="twoTables">
-			<div>
-				<table class="containerA">
-					<tbody class="container2">
-						<tr>
-							<th class="box" v-for="number in numbers">{{number}}</th>
-						</tr>
-						<tr v-for="letter in letters">
-							<td class="box">{{letter}}</td>
-							<td ondrop="dropVer(event)" ondragover="allowDrop(event)" class="box" v-for="i in 10" v-bind:id="letter + i"></td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="divDrag" id="PatrolBoat" draggable="true" @dragstart="drag">
+				<div class="div1Hor"><button @click="rotation('PatrolBoat')"><i class='fas fa-redo'></i></button></div>
+				<div class="div2Hor"></div>
 			</div>
 
-			<div>
-				<table class="containerB">
-					<tbody class="container2">
-						<tr>
-							<th class="box" v-for="number in numbers">{{number}}</th>
-						</tr>
-						<tr v-for="letter in letters">
-							<td class="box">{{letter}}</td>
-							<td class="box" v-for="i in 10" v-bind:id="2 + letter + i"></td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="divDrag" id="Destroyer" draggable="true" @dragstart="drag">
+				<div class="div1Hor"><button @click="rotation('Destroyer')"><i class='fas fa-redo'></i></button></div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
 			</div>
 
+			<div class="divDrag" id="Submarine" draggable="true" @dragstart="drag">
+				<div class="div1Hor"><button @click="rotation('Submarine')"><i class='fas fa-redo'></i></button></div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
+			</div>
+
+			<div class="divDrag" id="Battleship" draggable="true" @dragstart="drag">
+				<div class="div1Hor"><button @click="rotation('Battleship')"><i class='fas fa-redo'></i></button></div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
+			</div>
+
+			<div  class="divDrag" id="AircraftCarrier" draggable="true" @dragstart="drag">
+				<div class="div1Hor"><button @click="rotation('AircraftCarrier')"><i class='fas fa-redo'></i></button></div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
+				<div class="div2Hor"></div>
+			</div>
+			
+	</div>
+	<button v-on:click="putShips">Save Your Ships</button>
+
+	<div class="twoTables">
+		<div>
+			<table class="containerA">
+				<tbody class="container2">
+					<tr>
+						<th class="box" v-for="number in numbers">{{number}}</th>
+					</tr>
+					<tr v-for="letter in letters">
+						<td  class="box">{{letter}}</td>
+						<td  id="cell" @dragenter="dragEnter" @drop="drop" @dragover="allowDrop" class="box" v-for="i in 10" v-bind:id="letter + i"></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		<h3 class="youVsOponnent">-{{local.email}}- VS -{{oponnent.email}}-</h3>
+
+		<div>
+			<table class="containerB">
+				<tbody class="container2">
+					<tr>
+						<th class="box" v-for="number in numbers">{{number}}</th>
+					</tr>
+					<tr v-for="letter in letters">
+						<td class="box">{{letter}}</td>
+						<td class="box" v-for="i in 10" v-bind:id="2 + letter + i"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+
+	</div>
+	<h3 class="youVsOponnent">-{{local.email}}- VS -{{oponnent.email}}-</h3>
 	</div>
 </body>
+
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="game.js"></script>
 

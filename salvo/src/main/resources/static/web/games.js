@@ -26,7 +26,6 @@ var app = new Vue({
 					app.playerGame = myData.player;
 					console.log(app.playerGame);
 					app.gamePlayers = app.getGamePlayer();
-					console.log("GamePlayers", app.gamePlayers);
 					app.getPlayers();
 					app.addScores();
 					app.sortTable();
@@ -49,7 +48,7 @@ var app = new Vue({
 					console.log('Request success: ', response);
 					if (response.status == 200) {
 						location.reload();
-						app.ourGp = true;
+					
 					}
 					if (response.status == 401) {
 						alert("Your name or password is incorrect")
