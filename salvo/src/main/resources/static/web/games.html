@@ -13,6 +13,7 @@
 
 	<div id="app">
 
+	<div >
 		<video autoplay="autoplay" loop="loop" id="video_background" preload="auto" muted />
 		<source src="media/EarthSun.mp4" type="video/mp4" />
 		</video />
@@ -35,11 +36,14 @@
 
 			<form onsubmit="return false" v-else>
 				<button v-on:click="createGame">NEW GAME</button>
-				<button v-on:click="logout">LOGOUT</button>
+				<button v-on:click="logout">LOGOUT</button>	
 			</form>
 		</div>
+	</div>
 
-		<div class="listAndTable">
+	
+		
+		<div v-show="table" class="listAndTable">
 			<ul class="ol">
 				<li class="leaderTable" v-for="dato in dateGame">
 					{{dato.date}} : <span v-for="info in dato.gamePlayers">
@@ -49,7 +53,6 @@
 			</ul>
 			<table class="leaderTable">
 				<tr>
-
 					<th class="tableTh">NAME</th>
 					<th class="tableTh">TOTAL</th>
 					<th class="tableTh">WON</th>
@@ -57,7 +60,6 @@
 					<th class="tableTh">TIED</th>
 				</tr>
 				<tr v-for="(info, index) in obj">
-
 					<td class="tableTd">{{index + 1}} : {{info.email}}</td>
 					<td class="tableTd">{{info.totalPoints}}</td>
 					<td class="tableTd">{{info.won}}</td>
@@ -65,7 +67,9 @@
 					<td class="tableTd">{{info.tied}}</td>
 				</tr>
 			</table>
-		</div>
+		
+	</div>
+
 	</div>
 
 </body>

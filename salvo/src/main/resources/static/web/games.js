@@ -3,12 +3,14 @@ var app = new Vue({
 	data: {
 		dateGame: [],
 		playerGame: null,
+		table: true,
 		gamePlayers: [],
 		obj: [],
 		gPlayers: [],
 		username: "",
 		password: "",
-		newPlayer: []
+		newPlayer: [],
+
 	},
 
 	methods: {
@@ -31,6 +33,7 @@ var app = new Vue({
 					app.sortTable();
 					app.audioPlay();
 
+
 				})
 		},
 
@@ -47,12 +50,17 @@ var app = new Vue({
 				.then(function (response) {
 					console.log('Request success: ', response);
 					if (response.status == 200) {
+
+
 						location.reload();
-					
+						app.showLogin = true;
+
 					}
 					if (response.status == 401) {
 						alert("Your name or password is incorrect")
 					}
+
+
 				})
 				.catch(function (error) {
 					console.log('Request failure: ', error);
@@ -74,6 +82,7 @@ var app = new Vue({
 						app.logins = true;
 						app.signups = true;
 						app.logouts = false;
+						app.showLogin = false;
 						alert("See you soon!!")
 					}
 				})
@@ -109,6 +118,11 @@ var app = new Vue({
 				console.log('Request failure: ', error);
 			});
 
+		},
+		showLogin: function () {
+			
+			this.table = true;
+			
 		},
 		getGamePlayer: function () { //GET-ALL-GAMEPLAYERS
 			var gPlayers = [];
@@ -244,8 +258,8 @@ var app = new Vue({
 				.catch(function (error) {});
 		},
 		joinGame: function (dato) {
-		console.log(dato.id);
-		
+			console.log(dato.id);
+
 			fetch("/api/games/" + dato.id + "/players", {
 				credentials: 'include',
 				headers: {
@@ -256,9 +270,9 @@ var app = new Vue({
 			}).then(function (response) {
 				return response.json();
 			}).then(function (data) {
-				if(data.GpId){
-				app.newPlayer = data.GpId
-				window.location = 'game.html?gp=' + app.newPlayer;
+				if (data.GpId) {
+					app.newPlayer = data.GpId
+					window.location = 'game.html?gp=' + app.newPlayer;
 				}
 				console.log(data);
 			}).catch(function (error) {});
@@ -266,18 +280,18 @@ var app = new Vue({
 		buttonJoin: function (dato) {
 			if (this.playerGame != null) {
 				for (var x = 0; x < dato.gamePlayers.length; x++)
-				if (dato.gamePlayers.length !== 2 && this.playerGame.id !== dato.gamePlayers[x].player.id) {
-					return true
-				}
+					if (dato.gamePlayers.length !== 2 && this.playerGame.id !== dato.gamePlayers[x].player.id) {
+						return true
+					}
 			}
-	    },
+		},
 		audioPause: function () {
-			var audio = document.getElementsByTagName("audio")[0];	
+			var audio = document.getElementsByTagName("audio")[0];
 			return audio.pause();
 		},
 		audioPlay: function () {
-			var audio = document.getElementsByTagName("audio")[0];	
-			return audio.play();
+			var audio = document.getElementsByTagName("audio")[0];
+			return audio.pause();
 		},
 	},
 	created: function () {
@@ -287,8 +301,3 @@ var app = new Vue({
 
 var audio = document.getElementsByTagName("audio")[0];
 audio.play();
-
-
-
-
-

@@ -36,31 +36,31 @@
 
 		<div @drop="drop" @dragover="allowDrop" class="repositorySpaceShips">
 
-			<div class="divDrag" id="PatrolBoat" draggable="true" @dragstart="drag">
+			<div class="divDragHor" id="PatrolBoat" draggable="true" @dragstart="drag">
 				<div class="div1Hor"><button @click="rotation('PatrolBoat')"><i class='fas fa-redo'></i></button></div>
 				<div class="div2Hor"></div>
 			</div>
 
-			<div class="divDrag" id="Destroyer" draggable="true" @dragstart="drag">
+			<div class="divDragHor" id="Destroyer" draggable="true" @dragstart="drag">
 				<div class="div1Hor"><button @click="rotation('Destroyer')"><i class='fas fa-redo'></i></button></div>
 				<div class="div2Hor"></div>
 				<div class="div2Hor"></div>
 			</div>
 
-			<div class="divDrag" id="Submarine" draggable="true" @dragstart="drag">
+			<div class="divDragHor" id="Submarine" draggable="true" @dragstart="drag">
 				<div class="div1Hor"><button @click="rotation('Submarine')"><i class='fas fa-redo'></i></button></div>
 				<div class="div2Hor"></div>
 				<div class="div2Hor"></div>
 			</div>
 
-			<div class="divDrag" id="Battleship" draggable="true" @dragstart="drag">
+			<div class="divDragHor" id="Battleship" draggable="true" @dragstart="drag">
 				<div class="div1Hor"><button @click="rotation('Battleship')"><i class='fas fa-redo'></i></button></div>
 				<div class="div2Hor"></div>
 				<div class="div2Hor"></div>
 				<div class="div2Hor"></div>
 			</div>
 
-			<div  class="divDrag" id="AircraftCarrier" draggable="true" @dragstart="drag">
+			<div  class="divDragHor" id="AircraftCarrier" draggable="true" @dragstart="drag">
 				<div class="div1Hor"><button @click="rotation('AircraftCarrier')"><i class='fas fa-redo'></i></button></div>
 				<div class="div2Hor"></div>
 				<div class="div2Hor"></div>
@@ -80,7 +80,7 @@
 					</tr>
 					<tr v-for="letter in letters">
 						<td  class="box">{{letter}}</td>
-						<td  id="cell" @dragenter="dragEnter" @drop="drop" @dragover="allowDrop" class="box" v-for="i in 10" v-bind:id="letter + i"></td>
+						<td   @dragenter="dragEnter" @drop="drop" @dragover="allowDrop" class="box" v-for="i in 10" v-bind:id="letter + i"></td>
 					</tr>
 				</tbody>
 			</table>

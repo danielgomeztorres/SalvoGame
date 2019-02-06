@@ -215,9 +215,18 @@ label {
     text-align: center;
     z-index: -50;
 }
+.box2 {
+    display: inline-grid;
+    background-color: #00d6db;
+    border: 1px solid #0c0b0c;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    z-index: -50;
+}
 .boxDrag {
     display: inline-grid;
-    background-color:palevioletred;
+    background-color:#8012c4ab;;
     border: 1px solid #0c0b0c;
     width: 24px;
     height: 24px;
@@ -247,7 +256,7 @@ label {
 
 }
 
-.divDrag {
+.divDragHor {
     display: flex;
     flex-direction: row;
     background-color: rgba(0, 128, 0, 0);
