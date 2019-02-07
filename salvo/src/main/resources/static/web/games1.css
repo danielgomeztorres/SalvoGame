@@ -215,9 +215,18 @@ label {
     text-align: center;
     z-index: -50;
 }
-.box2 {
+.boxGreen {
     display: inline-grid;
-    background-color: #00d6db;
+    background-color: greenyellow;
+    border: 1px solid #0c0b0c;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    z-index: -50;
+}
+.boxRed {
+    display: inline-grid;
+    background-color: red;
     border: 1px solid #0c0b0c;
     width: 24px;
     height: 24px;

@@ -80,7 +80,7 @@
 					</tr>
 					<tr v-for="letter in letters">
 						<td  class="box">{{letter}}</td>
-						<td   @dragenter="dragEnter" @drop="drop" @dragover="allowDrop" class="box" v-for="i in 10" v-bind:id="letter + i"></td>
+						<td  @dragenter="dragEnter" @drop="drop" @dragover="allowDrop" class="box" v-for="i in 10" v-bind:id="letter + i"></td>
 					</tr>
 				</tbody>
 			</table>
